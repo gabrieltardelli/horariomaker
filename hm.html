@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" type="text/css" href="hm.css" media="screen">
+    <title>Horário Maker</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+  </head>
+  <body>
+    <div>
+        <!--<h1 id="titulo">Horário Maker</h1>-->
+        <br>
+          <img id="logo" src="./img/logo.png"/>
+    </div>
+    <form id="form1">
+    <div id="dvContainer">
+    <table id="tabela">
+      <tr>
+        <th id="tabel">Horário</th>
+        <th id="tabel">Segunda</th>
+        <th id="tabel">Terça</th>
+        <th id="tabel">Quarta</th>
+        <th id="tabel">Quinta</th>
+        <th id="tabel">Sexta</th>
+        <th id="tabel">Sábado</th>
+      </tr>
+      <tr>
+        <th id="tabelas">8:00-9:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">10:00-11:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">12:00-13:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">14:00-15:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">16:00-17:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">18:00-19:50h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">19:00-20:40h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+      <tr>
+        <th id="tabelas">20:50-22:30h</th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+        <th id="tabelas"></th>
+      </tr>
+    </table>
+  </div>
+  <input type="button" class="botao" value="Salvar pdf" id="btnPrint" />
+  </form>
+  <script>
+    const resultsList = document.getElementById('results')
+    new URLSearchParams(window.location.search).forEach((value, name) => {
+      resultsList.append('${name}: ${value}')
+      resultsList.append(document.createElement('br'))
+    })
+  </script>
+      <button class="botaoa" type="submit" onclick="window.location.href='./AddMat.html';" onsubmit="">Adicionar matéria</button>
+      <button class="botaor" type="submit" onclick="window.location.href='./RemMat.html';"  onsubmit="">Remover matéria</button>
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+      <script type="text/javascript">
+          $("#btnPrint").live("click", function () {
+              var divContents = $("#dvContainer").html();
+              var printWindow = window.open('', '', 'height=400,width=800');
+              printWindow.document.write('<html><head><title>Horário Maker</title>');
+              printWindow.document.write('</head><body >');
+              printWindow.document.write(divContents);
+              printWindow.document.write('</body></html>');
+              printWindow.document.close();
+              printWindow.print();
+          });
+      </script>
+    <!--  <button class="botao" type="submit" onclick="window.location.href='./Savepdf.html';"  onsubmit="">Salvar pdf</button>-->
+  </body>
+</html>

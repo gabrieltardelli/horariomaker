@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <link rel="stylesheet" type="text/css" href="hm.css" media="screen">
+    <link rel="shortcut icon" type="image/x-icon" href="./img/favicon.ico" />
+    <title>Adicionar Matéria</title>
+  </head>
+  <body>
+    <div>
+          <img id="logo" src="./img/logo.png"/>
+    </div>
+      <div>
+          <h1 id="titulo">Adicionando uma matéria</h1>
+          <br>
+      </div>
+      <form action="hm.html" method="get">
+
+          <fieldset class="grupo">
+              <div class="campo">
+                  <label for="nome"><strong>Nome da matéria</strong></label>
+                  <input type="text" name="nome" id="nome" required>
+              </div>
+          </fieldset>
+
+                    <div class="campo">
+                        <label for="dias"><strong>Dias da semana</strong></label>
+                        <select name="dias" id="dias" required>
+                          <option selected disabled value="">Selecione</option>
+                          <option value="Segunda">Segunda</option>
+                          <option value="Terça">Terça</option>
+                          <option value="Quarta">Quarta</option>
+                          <option value="Quinta">Quinta</option>
+                          <option value="Sexta">Sexta</option>
+                          <option value="Sábado">Sábado</option>
+                          <option value="Segunda e Quarta">Segunda e Quarta</option>
+                          <option value="Terça e Quinta">Terça e Quinta</option>
+                          <option value="Quarta e Sexta">Quarta e Sexta</option>
+                          <option value="Segunda, Quarta e Sexta">Segunda, Quarta e Sexta</option>
+                          <option value="Terça, Quinta e Sexta">Terça, Quinta e Sexta</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="hora"><strong>Horário da aula: </strong></label>
+                        <select name="hora" id="hora" required>
+                          <option selected disabled value="">Selecione</option>
+                          <option value="8h">8:00-9:50h</option>
+                          <option value="10h">10:00-11:50h</option>
+                          <option value="12h">12:00-13:50h</option>
+                          <option value="14h">14:00-15:50h</option>
+                          <option value="16h">16:00-17:50h</option>
+                          <option value="18h">18:00-19:50h</option>
+                          <option value="19h">19:00-20:40h</option>
+                          <option value="21h">20:50-22:30h</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                      <label for="cor"><strong>Cor da matéria: </strong></label>
+                    <input type="color" name="cor" id="cor">
+                    </div>
+      <!--    <button class="botao" type="submit" onclick="window.location.href='./hm.html';"  onsubmit="">Concluído</button>-->
+      <button class="botao" type="submit"  onsubmit="">Concluído</button>
+      </form>
+
+  </body>
+
+</html>
